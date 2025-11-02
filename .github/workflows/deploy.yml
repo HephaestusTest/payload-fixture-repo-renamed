@@ -1,0 +1,17 @@
+name: Fixture Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "Trigger"
+        required: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: fixtures
+    steps:
+      - name: Emit
+        run: echo "Hello from deployment"
